@@ -42,5 +42,12 @@ def register():
     return redirect(url_for("index"))
 
 
+@app.route("/employees_list")
+def employees_list():
+    employees = Employee.query.all()
+
+    return render_template("list.html", employees=employees)
+
+
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')

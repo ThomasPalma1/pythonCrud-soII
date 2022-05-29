@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
-  <body>
-      <h1>Employee Registration</h1>
-      <hr>
-  </body>
-</html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>All registered Employees</h1>
+        <hr>
+        <table>
+            <tr>
+                <th>Identification Number</th>
+                <th>Name</th>
+            </tr> {% for employee in employees %} <tr>
+                <td>{{employee._id}}</td>
+                <td>{{employee.name}}</td>
+            </tr>
+            {% endfor %}
+				</table>
+			</body>
+		</html>
