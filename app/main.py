@@ -49,5 +49,21 @@ def employees_list():
     return render_template("list.html", employees=employees)
 
 
+@app.route("/delete/<int:id>")
+def delete(id):
+    employee = Employee.query.filter_by(_id=id).first()
+    db.session.delete(employee)
+    db.session.commit()
+
+    employees = Employee.query.all()
+
+    return redirect("/employees_list")
+    #return render_template("list.html", employees=employees)
+
+
+def redirect_user():
+    return render_template("index.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')

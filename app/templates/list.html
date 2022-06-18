@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
     </head>
@@ -10,11 +10,16 @@
             <tr>
                 <th>Identification Number</th>
                 <th>Name</th>
-            </tr> {% for employee in employees %} <tr>
+                <th>Delete</th>
+            </tr>
+            {% for employee in employees %}
+            <tr>
                 <td>{{employee._id}}</td>
                 <td>{{employee.name}}</td>
+                <td><a href="/delete/{{employee._id}}">X</a></td>
             </tr>
             {% endfor %}
 				</table>
+                <a href="/index">Back to Home Screen</a>
 			</body>
 		</html>
